@@ -1,7 +1,8 @@
-import First from '../../assets/MB.jpg'
-import Second from '../../assets/Kite-Festival.jpg'
-import Third from '../../assets/pic3.jpeg'
-import Fourth from '../../assets/pic4.jpeg'
+import First from '../../assets/main_building_reduced.jpg'
+import Second from '../../assets/eee_dept.jpg'
+import Third from '../../assets/1_reduced.jpg'
+import Fourth from '../../assets/picFinal1.jpg'
+import Fifth from '../../assets/nitk-lighthouse.jpg'
 
 export default [{
   title:'First Slider Image',
@@ -22,6 +23,11 @@ export default [{
   title:'Fourth Slider Image',
   description: 'This is the Fourth slider image',
   urls:Fourth
+},
+{
+  title:'Fifth Slider Image',
+  description: 'This is the Fourth slider image',
+  urls:Fifth
 },
 
 
