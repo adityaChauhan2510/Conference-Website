@@ -15,7 +15,7 @@ export default function Slider() {
         }, 3000);
         return ()=>clearInterval(Interval);
     }, [activeIndex]);
-    
+
   return (
     <div className="slider-container"> 
     <SliderContent activeIndex={activeIndex} imageSlider={imageSlider} />

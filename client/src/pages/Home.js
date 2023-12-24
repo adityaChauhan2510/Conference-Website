@@ -1,39 +1,36 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Logo from '../components/Logo';
-import Carousel from '../components/Carousel/Slider';
+import React from "react";
+
 import Button from '../components/Button';
 import Main from '../components/Main';
-import Timeline from '../components/Timeline';
+import ActivitiesTimeline from '../components/ActivitiesTimeline';
 import Footer from '../components/Footer';
 import Tracks from '../components/Tracks';  
+import CarouselWithContent from '../components/CarouselWithText';
+import Counter from "../components/Counter/counter-logic";
 
 
 export default function Home() {
+  const conferenceDate = '2024-01-06T23:59:59'
+
   return (
     <>
         <header>
-            
-            <Carousel />
-
-            <Button text="Brochure" link="https://pedes2024.org/static/pdf/Broucher.pdf" />
+            {/* <Carousel /> */}
+            <CarouselWithContent />
+            <Button text="Brochure" link="" />
         </header>
-            
-        
-        <main>
+        <section className='container mx-auto flex flex-col items-center justify-center'>
 
             <Main />
             <Tracks />
-            <Timeline />
+            <ActivitiesTimeline />
+            <Counter conferenceDate={conferenceDate}/>
 
-        </main>
+        </section>
 
-        <footer>
-            <Footer />
-        </footer>
-
-
-        
+      <footer>
+        <Footer />
+      </footer>
     </>
-  )
+  );
 }

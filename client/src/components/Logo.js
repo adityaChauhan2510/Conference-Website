@@ -1,71 +1,33 @@
-// import React from 'react'
+import React from "react";
+import nitk from "./../assets/nitk.png";
+import assets from "../assets/assets.jpg";
+// import ieee from "./../assets/ieee.png";
+import { Link } from "react-router-dom";
 
-// export default function Logo() {
-//   return (
-//     <div>Logo</div>
-//   )
-// }
-
-
-
-
-import React from 'react';
-import nitk from "./../assets/nitk_logo.png";
-import pedas from "../assets/pedas.png";
-import ieee from "./../assets/ieee.png"
-const Logo = () => {
+export default function Logo() {
   return (
-    <header style={header}>
-      <div style={leftimage}>
-        <img src={pedas} alt="left" style={image1} />
+    <header className="flex justify-between items-center p-1">
+      <div className="object-cover">
+        <img src={assets} alt="PEDES-IMAGE" className="h-30 md:h-40 mx-1 object-cover" />
       </div>
-      <div style={text}>
-        <h1></h1>
-      </div>
-      <div style={rightimage}>
-        <img src={nitk} alt="right" style={image2} />
-        <img src={ieee} alt="right" style={image3} />
-        
+
+      <div className="flex">
+        <Link to="https://www.nitk.ac.in/">
+          <img
+            src={nitk}
+            alt="NITK_LOGO"
+            className="h-24 md:h-30 mx-1"
+          />
+        </Link>
+
+        {/* <Link to="https://www.ieee.org/">
+          <img
+            src={ieee}
+            alt="IEEE_LOGO"
+            className="h-20 md:h-30 mx-1"
+          />
+        </Link> */}
       </div>
     </header>
   );
-};
-
-
-const header = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '5px',
-};
-
-const leftimage = {
-  marginRight: '20px',
-};
-
-const rightimage = {
-  display: 'flex',
-};
-
-const text = {
-  flex: 1,
-};
-
-const image1 = {
-  width: '330px',
-  borderRadius:'',
 }
-
-const image2 = {
-  width: '90px',
-  height: '',
-  borderRadius: '10%', 
-  marginRight:'20px'
-};
-
-const image3 = {
-  width: '90px',
-  borderRadius: '',
-}
-
-export default Logo;

@@ -1,13 +1,26 @@
-import React from 'react';
-import './styles.css'; 
+import React from "react";
+import Logo2 from "./Logo2";
+import Heading from "./Heading";
 
 export default function Main() {
   return (
-    <div className="container mx-auto px-4 py-8 text-center">
-      <h1 className="text-4xl font-bold mb-4">About PEDES</h1>
-      <p className="text-lg mb-4">
-        IEEE Power Electronics, Drives and Energy Systems (PEDES) is a biennial conference sponsored by IEEE Industry Applications Society and technically co-sponsored by IEEE Power Electronics Society, Industrial Electronics Society, and Power & Energy Society. The upcoming IEEE PEDES 2024 conference will be held at National Institute of Technology Karnataka (NITK) Surathkal, Mangaluru from 18th - 21st December 2024.
-      </p>
+    <div className="container mx-auto flex flex-col items-center justify-center px-4 my-20 mb-20">
+      <Heading text="Society Sponsors" />
+      <Logo2 />
+
+      <div className="mt-40 items-center">
+        <Heading text="Conference Overview" />
+        <p className="mt-10 text-xl">
+          The International Conference on Advancements in Smart, Sustainable
+          Energy Sources, Technologies, and Systems (ASSETS) aims to bring
+          together researchers, scientists, engineers, and industry
+          professionals to explore and discuss the latest developments in the
+          field of smart and sustainable energy. This conference will serve as a
+          platform for exchanging ideas, sharing innovative research findings,
+          and fostering collaborations to address the global challenges
+          associated with energy sustainability.
+        </p>
+      </div>
     </div>
   );
 }
