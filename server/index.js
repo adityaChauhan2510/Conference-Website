@@ -1,59 +1,54 @@
 const express = require("express");
-const colors = require("colors");
 const bodyParser = require("body-parser");
+const colors = require("colors");
 const multer = require("multer");
-const path = require("path");
 const nodemailer = require("nodemailer");
-
+const cors = require("cors");
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const storage = multer.memoryStorage(); // Store file in memory
-const upload = multer({ storage: storage });
+const upload = multer();
 
-app.post("/upload-pdf", upload.single("pdf"), async (req, res) => {
-  if (!req.file) {
-    return res.status(400).send("No file uploaded.");
-  }
-
+app.post("/api/submit", upload.single("paymentReceipt"), async (req, res) => {
   try {
-    // Send email with the PDF attachment
-    await sendEmailWithAttachment(req.file);
+    const paymentReceipt = req.file;
+    console.log(paymentReceipt);
 
-    res.send("File uploaded and sent via email successfully.");
+    if (!paymentReceipt) {
+      return res.status(400).send("Payment receipt is required");
+    }
+
+    // const transporter = nodemailer.createTransport({
+    //   service: "Gmail",
+    //   auth: {
+    //     user: process.env.EMAIL_USERNAME,
+    //     pass: process.env.EMAIL_PASSWORD,
+    //   },
+    // });
+
+    // const mailOptions = {
+    //   from: process.env.EMAIL_USERNAME,
+    //   to: "aditya2510@gmail.com",
+    //   subject: "Payment Receipt",
+    //   text: "Please find attached payment receipt",
+    //   attachments: [
+    //     {
+    //       filename: paymentReceipt.originalname,
+    //       content: paymentReceipt.buffer,
+    //     },
+    //   ],
+    // };
+
+    // await transporter.sendMail(mailOptions);
+    res.status(200).send("Email sent successfully");
   } catch (error) {
     console.error("Error sending email:", error);
-    res.status(500).send("Error sending email.");
+    res.status(500).send("An error occurred while sending email");
   }
 });
-
-// Function to send email with PDF attachment
-async function sendEmailWithAttachment(pdfFile) {
-  const transporter = nodemailer.createTransport({
-    service: "your-email-service-provider",
-    auth: {
-      user: "your-email@example.com",
-      pass: "your-email-password",
-    },
-  });
-
-  const mailOptions = {
-    from: "your-email@example.com",
-    to: "recipient@example.com",
-    subject: "PDF Attachment",
-    text: "Attached is the PDF file.",
-    attachments: [
-      {
-        filename: "document.pdf",
-        content: pdfFile.buffer,
-      },
-    ],
-  };
-
-  await transporter.sendMail(mailOptions);
-}
 
 app.get("/", (req, res) => {
   res.send("Hello");

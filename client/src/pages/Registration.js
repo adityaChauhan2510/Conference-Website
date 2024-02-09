@@ -59,7 +59,9 @@ function Registration() {
                     variant="small"
                     color="blue-gray"
                     className="text-xl font-extrabold leading-none opacity-100 "
-                  ></Typography>
+                  >
+                    {""}
+                  </Typography>
                 </th>
                 <th
                   className="text-xl sm:text-md font-bold bg-blue-gray-100 md:text-center"
