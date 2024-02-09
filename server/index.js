@@ -31,7 +31,7 @@ app.post("/api/submit", upload.single("paymentReceipt"), async (req, res) => {
 
     // const mailOptions = {
     //   from: process.env.EMAIL_USERNAME,
-    //   to: "aditya2510@gmail.com",
+    //   to: "",
     //   subject: "Payment Receipt",
     //   text: "Please find attached payment receipt",
     //   attachments: [
