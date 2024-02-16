@@ -108,8 +108,8 @@ const Payment = () => {
   };
 
   return (
-    <div>
-      <div className="w-[80%] mx-auto bg-white p-8 border rounded-md shadow-md">
+    <div className="my-10">
+      <div className="w-[90%] sm:w-[75%] md:w-[80%]  mx-auto bg-white p-8 border rounded-md shadow-md">
         <h2 className="text-3xl font-bold mb-6 text-center">
           Online Payment Details
         </h2>

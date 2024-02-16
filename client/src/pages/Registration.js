@@ -128,6 +128,7 @@ function Registration() {
             </tbody>
           </table>
         </Card>
+
         <Payment />
 
         <Footer />
