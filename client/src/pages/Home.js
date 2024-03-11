@@ -25,7 +25,7 @@ export default function Home() {
         <div className="h-20"></div>
         <Map />
 
-        <Counter conferenceDate={conferenceDate} />
+        {/* <Counter conferenceDate={conferenceDate} /> */}
         <Footer />
       </main>
     </>
